@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "DualEngineRegimeBot.Core/1.0.0": {
+        "runtime": {
+          "DualEngineRegimeBot.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DualEngineRegimeBot.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,12 @@
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Core\bin\Debug\net6.0\DualEngineRegimeBot.Core.deps.json
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Core\bin\Debug\net6.0\DualEngineRegimeBot.Core.dll
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Core\bin\Debug\net6.0\DualEngineRegimeBot.Core.pdb
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Core\obj\Debug\net6.0\DualEngineRegimeBot.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Core\obj\Debug\net6.0\DualEngineRegimeBot.Core.AssemblyInfoInputs.cache
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Core\obj\Debug\net6.0\DualEngineRegimeBot.Core.AssemblyInfo.cs
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Core\obj\Debug\net6.0\DualEngineRegimeBot.Core.csproj.CoreCompileInputs.cache
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Core\obj\Debug\net6.0\DualEngineRegimeBot.Core.dll
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Core\obj\Debug\net6.0\refint\DualEngineRegimeBot.Core.dll
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Core\obj\Debug\net6.0\DualEngineRegimeBot.Core.pdb
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Core\obj\Debug\net6.0\ref\DualEngineRegimeBot.Core.dll
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Core\obj\Debug\net6.0\DualEngineRegimeBot.Core.sourcelink.json

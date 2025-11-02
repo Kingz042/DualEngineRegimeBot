@@ -1,0 +1,16 @@
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Hosts.cTrader\obj\Debug\net6.0\DualEngineRegimeBot.Hosts.cTrader.csproj.AssemblyReference.cache
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Hosts.cTrader\obj\Debug\net6.0\DualEngineRegimeBot.Hosts.cTrader.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Hosts.cTrader\obj\Debug\net6.0\DualEngineRegimeBot.Hosts.cTrader.AssemblyInfoInputs.cache
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Hosts.cTrader\obj\Debug\net6.0\DualEngineRegimeBot.Hosts.cTrader.AssemblyInfo.cs
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Hosts.cTrader\obj\Debug\net6.0\DualEngineRegimeBot.Hosts.cTrader.csproj.CoreCompileInputs.cache
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Hosts.cTrader\bin\Debug\net6.0\DualEngineRegimeBot.Hosts.cTrader.deps.json
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Hosts.cTrader\bin\Debug\net6.0\DualEngineRegimeBot.Hosts.cTrader.dll
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Hosts.cTrader\bin\Debug\net6.0\DualEngineRegimeBot.Hosts.cTrader.pdb
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Hosts.cTrader\bin\Debug\net6.0\DualEngineRegimeBot.Core.dll
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Hosts.cTrader\bin\Debug\net6.0\DualEngineRegimeBot.Core.pdb
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Hosts.cTrader\obj\Debug\net6.0\DualEngi.FA73C908.Up2Date
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Hosts.cTrader\obj\Debug\net6.0\DualEngineRegimeBot.Hosts.cTrader.dll
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Hosts.cTrader\obj\Debug\net6.0\refint\DualEngineRegimeBot.Hosts.cTrader.dll
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Hosts.cTrader\obj\Debug\net6.0\DualEngineRegimeBot.Hosts.cTrader.pdb
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Hosts.cTrader\obj\Debug\net6.0\ref\DualEngineRegimeBot.Hosts.cTrader.dll
+C:\Users\kelechi\Documents\DualEngineRegimeBot\DualEngineRegimeBot.Hosts.cTrader\obj\Debug\net6.0\DualEngineRegimeBot.Hosts.cTrader.sourcelink.json
