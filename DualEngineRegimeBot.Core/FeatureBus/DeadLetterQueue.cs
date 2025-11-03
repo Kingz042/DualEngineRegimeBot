@@ -28,11 +28,11 @@ namespace DualEngineRegimeBot.Core.FeatureBus
             var entry = new DLQEntry
             {
                 Timestamp = DateTime.UtcNow,
-                EventType = eventType,
+                EventType = eventType ?? string.Empty,
                 PayloadSummary = GetPayloadSummary(payload),
                 ExceptionType = exception.GetType().Name,
                 ExceptionMessage = exception.Message,
-                StackTrace = exception.StackTrace
+                StackTrace = exception.StackTrace ?? string.Empty
             };
             
             lock (_queue)
@@ -136,12 +136,12 @@ namespace DualEngineRegimeBot.Core.FeatureBus
     /// </summary>
     public class DLQEntry
     {
-        public DateTime Timestamp { get; set; }
-        public string EventType { get; set; }
-        public string PayloadSummary { get; set; }
-        public string ExceptionType { get; set; }
-        public string ExceptionMessage { get; set; }
-        public string StackTrace { get; set; }
+        public DateTime Timestamp { get; set; } = DateTime.UtcNow;
+        public string EventType { get; set; } = string.Empty;
+        public string PayloadSummary { get; set; } = string.Empty;
+        public string ExceptionType { get; set; } = string.Empty;
+        public string ExceptionMessage { get; set; } = string.Empty;
+        public string StackTrace { get; set; } = string.Empty;
         
         public override string ToString()
         {
@@ -158,7 +158,7 @@ namespace DualEngineRegimeBot.Core.FeatureBus
         public int ErrorsLastHour { get; set; }
         public int QueueSize { get; set; }
         public bool RateLimitBreached { get; set; }
-        public Dictionary<string, int> TopExceptions { get; set; }
+        public Dictionary<string, int> TopExceptions { get; set; } = new();
         public DateTime? OldestEntry { get; set; }
         public DateTime? NewestEntry { get; set; }
         

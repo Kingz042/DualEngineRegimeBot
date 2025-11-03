@@ -12,13 +12,13 @@ namespace DualEngineRegimeBot.Hosts.cTrader
     public sealed class NewsEvent
     {
         /// <summary>Event start time (UTC).</summary>
-        public DateTime From { get; set; }
+        public DateTime From { get; set; } = DateTime.UtcNow;
         
         /// <summary>Event end time (UTC).</summary>
-        public DateTime To { get; set; }
+        public DateTime To { get; set; } = DateTime.UtcNow;
         
         /// <summary>News phase during this event.</summary>
-        public string Phase { get; set; } = "Normal";
+        public string Phase { get; init; } = "Normal";
     }
     
     /// <summary>

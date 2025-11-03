@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DualEngineRegimeBot.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9e92548aff3136b4b4015d2e5f0065160687b1f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+65dc0fe385c707b85ecf99b7d6dbbf2ba8df612e")]
 [assembly: System.Reflection.AssemblyProductAttribute("DualEngineRegimeBot.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DualEngineRegimeBot.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
