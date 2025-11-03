@@ -1,0 +1,167 @@
+{
+  "BotName": "FracMeanDualEngine_V12",
+  "ConfigVersion": "2025-11-01-v2",
+  "SchemaVersion": "1.2",
+  "DeployedAt": "2025-11-01T00:00:00Z",
+  "ConfigHash": "",
+  
+  "SurvivalMode": {
+    "Enabled": false,
+    "RiskCap": 0.10,
+    "TriggerThresholdPct": 10.0
+  },
+  
+  "Bundles": {
+    "EmaCenter": 10,
+    "EmaSpan": 5,
+    "VolBand": 0.10,
+    "SLmult": 2.0,
+    "SLdelta": 0.5,
+    "SMSzClip": 3.0,
+    "SMSConfirmThreshold": 0.30,
+    "MaxHedges": 1,
+    "Hmult": 1.2,
+    "DirThreshold": 0.05,
+    "DirHysteresis": 0.10
+  },
+  
+  "Hedge": {
+    "Enabled": true,
+    "TriggerMultiplier": 1.2,
+    "VolumeCap": 1.0,
+    "CooldownMs": 2000,
+    "SpreadGuardMultiplier": 1.5,
+    "RecoveryTargetMultiplier": 0.6,
+    "MicroRevivalSMS": 1.1,
+    "MacroAlignmentConfidence": 0.55,
+    "TimeDecayMinutes": 15,
+    "TimeDecayUnwindFraction": 0.5,
+    "HedgeStopMultiplier": 0.8,
+    "MarginBufferMultiplier": 2.0
+  },
+  
+  "NewsGuard": {
+    "Enabled": true,
+    "SMSDeltaThreshold": 2.0,
+    "SpreadBlowoutMultiplier": 3.0,
+    "BlockPhaseMinutes": 2,
+    "UnwindOnlyPhaseMinutes": 3,
+    "RestrictedPhaseMinutes": 10,
+    "RestrictedPhaseHmultMultiplier": 2.0
+  },
+  
+  "DrawdownScaling": {
+    "Enabled": true,
+    "ThresholdLevels": [2.0, 5.0, 10.0],
+    "DamperValues": [1.0, 0.7, 0.4, 0.0],
+    "UseHybridPeak": true,
+    "RollingPeakWindowDays": 30,
+    "RollingPeakMultiplier": 0.95
+  },
+  
+  "ExecutionQoS": {
+    "Enabled": true,
+    "BaseSlippageMultiplier": 0.1,
+    "LatencySlippageCoefficient": 1.0,
+    "ImpactSlippageCoefficient": 0.5,
+    "TargetRejectRatePct": 2.0,
+    "TargetAvgSlippageMultiplier": 0.25
+  },
+  
+  "FeatureBus": {
+    "Enabled": true,
+    "EnableDLQ": true,
+    "DLQRateLimitPerHour": 10,
+    "HaltEntriesOnDLQBreach": true,
+    "EventVersion": "1.0"
+  },
+  
+  "Symbol": "XAUUSD",
+  "Timeframe": "M1",
+  "OutputDirectory": "C:\\Trading\\Logs\\DualEngineBot",
+  "StateDirectory": "C:\\Trading\\State\\DualEngineBot",
+  
+  "Regime": {
+    "FastEMA": 6,
+    "SlowEMA": 21,
+    "ATRPeriod": 14,
+    "ATRLongWindow": 50,
+    "ConfidenceWeight": 0.6,
+    "DirectionalThreshold": 0.05,
+    "DirectionalHysteresis": 0.10
+  },
+  
+  "TrendFollower": {
+    "Enabled": true,
+    "BiasAlpha": 0.03,
+    "EnergyAlpha": 0.05,
+    "EnergyClamp": 5.0,
+    "AdaptivePqEnabled": true,
+    "PBase": 3,
+    "QBase": 0.90,
+    "PMin": 2,
+    "PMax": 6,
+    "QMin": 0.80,
+    "QMax": 0.98,
+    "PqAdaptAlpha": 0.10,
+    "BullThreshold": 0.25,
+    "BearThreshold": -0.25,
+    "EnergyMin": 0.35,
+    "TFCooldownBars": 5
+  },
+  
+  "SARE": {
+    "Enabled": true,
+    "KalmanR": 0.001,
+    "KalmanQ": 0.0001,
+    "ATRPeriod": 14,
+    "KappaWindow": 50,
+    "KappaEMASmooth": 10,
+    "KappaMin": 0.01,
+    "KappaMax": 2.0,
+    "VDIZFloor": 0.8,
+    "SigmaMin": 0.0001,
+    "EntryZThreshold": 2.5,
+    "ConfMin": 0.30,
+    "TauCap": 120,
+    "ExitFractionFast": 0.30,
+    "ExitFractionMedium": 0.50,
+    "ExitZFast": 0.8,
+    "ExitZMedium": 1.5,
+    "ExitKappaThresholdFast": 0.25,
+    "SareCooldownBars": 3
+  },
+  
+  "Sizing": {
+    "BaseRiskPct": 0.50,
+    "VolMultClampMin": 0.30,
+    "VolMultClampMax": 1.50,
+    "MarginSafetyFactor": 1.20,
+    "MinUnits": 0.01,
+    "MaxUnits": 10.0
+  },
+  
+  "Risk": {
+    "DailyLossLockPct": 2.0,
+    "MaxDrawdownPct": 10.0,
+    "SpreadGuardMultiplier": 2.0,
+    "MaxConcurrentPositions": 3,
+    "ExposureCapMultiplier": 2.0,
+    "SessionStartHour": 0,
+    "SessionEndHour": 24,
+    "WarmupBars": 1000
+  },
+  
+  "Comments": {
+    "_1": "EMA periods derived from Bundles: EmaCenter ± EmaSpan → [5, 8, 10, 13, 20]",
+    "_2": "VolBand: VolHi=1.10, VolLo=0.90 (symmetric around 1.0)",
+    "_3": "Stop-loss: HighVol=2.5×ATR, LowVol=1.5×ATR (SLmult ± SLdelta)",
+    "_4": "Hedge: Opens at 1.2×ATR adverse, unwinds at 0.6×ATR recovery",
+    "_5": "NewsGuard: Block (0-2min), UnwindOnly (3-5min), Restricted (6-15min), Normal (>15min)",
+    "_6": "Drawdown: <2%→1.0x, 2-5%→0.7x, 5-10%→0.4x, ≥10%→0.0x (or 0.1x survival)",
+    "_7": "Stress-timer: Underwater ≥2 bars + SMS<0.4 + Conf<0.50 → grace → exit",
+    "_8": "SMS: Window=20, zClip=3.0, ATR_floor at 20th percentile",
+    "_9": "ConfigHash: Computed on load, embedded in all trade/hedge logs for auditability"
+  }
+}
+
