@@ -11,6 +11,10 @@ namespace DualEngineRegimeBot.Tests
     /// </summary>
     public class SmsEngineTests
     {
+        /// <summary>
+        /// This test verifies that the SmsEngine can be initialized with default configuration
+        /// and returns valid initial state. Added test case documentation to improve CI workflow verification.
+        /// </summary>
         [Fact]
         public void SmsEngine_ShouldInitialize_WithDefaultConfig()
         {
