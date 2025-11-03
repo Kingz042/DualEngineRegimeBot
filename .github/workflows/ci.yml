@@ -1,0 +1,37 @@
+name: CI Build and Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET 8
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore DualEngineRegimeBot.sln
+
+    - name: Build solution
+      run: dotnet build DualEngineRegimeBot.sln --configuration Release --no-restore
+
+    - name: Run tests with logging
+      run: dotnet test DualEngineRegimeBot.Tests/DualEngineRegimeBot.Tests.csproj --configuration Release --no-build --logger "console;verbosity=normal" > test_output.log 2>&1
+
+    - name: Upload test log artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-log
+        path: test_output.log
