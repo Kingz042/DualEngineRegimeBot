@@ -104,6 +104,13 @@ namespace DualEngineRegimeBot.Core.FeatureBus
         
         private void PublishEnvelope<T>(FeatureEnvelope<T> envelope)
         {
+            if (envelope == null)
+                throw new ArgumentNullException(nameof(envelope));
+                
+            // Validate envelope properties
+            if (envelope.Payload == null)
+                throw new ArgumentException("Envelope payload cannot be null", nameof(envelope));
+                
             IFeatureSubscriber[] subscribersCopy;
             
             lock (_subscribers)
@@ -117,14 +124,21 @@ namespace DualEngineRegimeBot.Core.FeatureBus
                 try
                 {
                     // Async dispatch in production; synchronous here for simplicity
-                    subscriber.OnFeatureEvent(envelope.EventType, envelope.Version, envelope.Payload);
+                    // Since we validated envelope.Payload above, it's safe to use here
+                    subscriber.OnFeatureEvent(
+                        envelope.EventType ?? string.Empty,
+                        envelope.Version ?? string.Empty,
+                        envelope.Payload);
                 }
                 catch (Exception ex)
                 {
                     // Push to DLQ
                     if (_config.EnableDLQ)
                     {
-                        _dlq.Enqueue(envelope.EventType, envelope.Payload, ex);
+                        _dlq.Enqueue(
+                            envelope.EventType ?? string.Empty,
+                            envelope.Payload,  // Already validated as non-null
+                            ex);
                     }
                 }
             }
@@ -144,10 +158,10 @@ namespace DualEngineRegimeBot.Core.FeatureBus
     /// </summary>
     public class FeatureEnvelope<T>
     {
-        public string Version { get; set; }
-        public DateTime Timestamp { get; set; }
-        public string EventType { get; set; }
-        public T Payload { get; set; }
+        public string Version { get; set; } = string.Empty;
+        public DateTime Timestamp { get; set; } = DateTime.UtcNow;
+        public string EventType { get; set; } = string.Empty;
+        public T Payload { get; set; } = default!;
     }
     
     /// <summary>
@@ -155,14 +169,20 @@ namespace DualEngineRegimeBot.Core.FeatureBus
     /// </summary>
     public class M1Features
     {
-        public DateTime Timestamp { get; set; }
+        public DateTime Timestamp { get; set; } = DateTime.UtcNow;
         public double SMS { get; set; }
         public double AtrM1 { get; set; }
         public double Spread { get; set; }
-        public double[] EMAs { get; set; } // Derived from bundle
+        public double[] EMAs { get; set; } = Array.Empty<double>(); // Derived from bundle
         public double MidlinePrice { get; set; }
         public double DirScore { get; set; }
         public double VolRatio { get; set; }
+        
+        public M1Features()
+        {
+            // Initialize all values to prevent possible null references
+            EMAs = Array.Empty<double>();
+        }
     }
     
     /// <summary>
@@ -170,7 +190,7 @@ namespace DualEngineRegimeBot.Core.FeatureBus
     /// </summary>
     public class M15Features
     {
-        public DateTime Timestamp { get; set; }
+        public DateTime Timestamp { get; set; } = DateTime.UtcNow;
         public RegimeDirection Direction { get; set; }
         public RegimeVolState VolState { get; set; }
         public double Confidence { get; set; }

@@ -18,8 +18,8 @@ namespace DualEngineRegimeBot.Tests
         /// <param name="barCount">Number of M1 bars to load (default: 1000)</param>
         /// <param name="atrFloor">Minimum ATR for normalization (default: 0.5)</param>
         public static void Run(
-            ISmsEngine smsEngine = null,
-            IBarLoader barLoader = null,
+            ISmsEngine? smsEngine = null,
+            IBarLoader? barLoader = null,
             string symbol = "XAUUSD",
             int barCount = 1000,
             double atrFloor = 0.5)
