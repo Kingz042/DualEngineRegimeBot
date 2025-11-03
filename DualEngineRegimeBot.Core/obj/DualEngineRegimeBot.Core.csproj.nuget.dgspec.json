@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kelechi\\Documents\\DualEngineRegimeBot\\DualEngineRegimeBot.Core\\DualEngineRegimeBot.Core.csproj": {}
+    "C:\\Users\\kelechi\\Documents\\DualEngineRegimeBot\\DualEngineRegimeBot\\DualEngineRegimeBot.Core\\DualEngineRegimeBot.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kelechi\\Documents\\DualEngineRegimeBot\\DualEngineRegimeBot.Core\\DualEngineRegimeBot.Core.csproj": {
+    "C:\\Users\\kelechi\\Documents\\DualEngineRegimeBot\\DualEngineRegimeBot\\DualEngineRegimeBot.Core\\DualEngineRegimeBot.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kelechi\\Documents\\DualEngineRegimeBot\\DualEngineRegimeBot.Core\\DualEngineRegimeBot.Core.csproj",
+        "projectUniqueName": "C:\\Users\\kelechi\\Documents\\DualEngineRegimeBot\\DualEngineRegimeBot\\DualEngineRegimeBot.Core\\DualEngineRegimeBot.Core.csproj",
         "projectName": "DualEngineRegimeBot.Core",
-        "projectPath": "C:\\Users\\kelechi\\Documents\\DualEngineRegimeBot\\DualEngineRegimeBot.Core\\DualEngineRegimeBot.Core.csproj",
+        "projectPath": "C:\\Users\\kelechi\\Documents\\DualEngineRegimeBot\\DualEngineRegimeBot\\DualEngineRegimeBot.Core\\DualEngineRegimeBot.Core.csproj",
         "packagesPath": "C:\\Users\\kelechi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kelechi\\Documents\\DualEngineRegimeBot\\DualEngineRegimeBot.Core\\obj\\",
+        "outputPath": "C:\\Users\\kelechi\\Documents\\DualEngineRegimeBot\\DualEngineRegimeBot\\DualEngineRegimeBot.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -33,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kelechi\\Documents\\DualEngineRegimeBot\\DualEngineRegimeBot.Hosts.cTrader\\DualEngineRegimeBot.Hosts.cTrader.csproj",
+      "projectUniqueName": "C:\\Users\\kelechi\\Documents\\DualEngineRegimeBot\\DualEngineRegimeBot\\DualEngineRegimeBot.Hosts.cTrader\\DualEngineRegimeBot.Hosts.cTrader.csproj",
       "projectName": "DualEngineRegimeBot.Hosts.cTrader",
-      "projectPath": "C:\\Users\\kelechi\\Documents\\DualEngineRegimeBot\\DualEngineRegimeBot.Hosts.cTrader\\DualEngineRegimeBot.Hosts.cTrader.csproj",
+      "projectPath": "C:\\Users\\kelechi\\Documents\\DualEngineRegimeBot\\DualEngineRegimeBot\\DualEngineRegimeBot.Hosts.cTrader\\DualEngineRegimeBot.Hosts.cTrader.csproj",
       "packagesPath": "C:\\Users\\kelechi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kelechi\\Documents\\DualEngineRegimeBot\\DualEngineRegimeBot.Hosts.cTrader\\obj\\",
+      "outputPath": "C:\\Users\\kelechi\\Documents\\DualEngineRegimeBot\\DualEngineRegimeBot\\DualEngineRegimeBot.Hosts.cTrader\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -58,8 +58,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\kelechi\\Documents\\DualEngineRegimeBot\\DualEngineRegimeBot.Core\\DualEngineRegimeBot.Core.csproj": {
-              "projectPath": "C:\\Users\\kelechi\\Documents\\DualEngineRegimeBot\\DualEngineRegimeBot.Core\\DualEngineRegimeBot.Core.csproj"
+            "C:\\Users\\kelechi\\Documents\\DualEngineRegimeBot\\DualEngineRegimeBot\\DualEngineRegimeBot.Core\\DualEngineRegimeBot.Core.csproj": {
+              "projectPath": "C:\\Users\\kelechi\\Documents\\DualEngineRegimeBot\\DualEngineRegimeBot\\DualEngineRegimeBot.Core\\DualEngineRegimeBot.Core.csproj"
             }
           }
         }
