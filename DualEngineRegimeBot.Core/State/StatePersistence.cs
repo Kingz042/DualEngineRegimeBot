@@ -76,12 +76,12 @@ namespace DualEngineRegimeBot.Core.State
                 return state;
             }
             
-            // Return empty state
+            // Return new empty state
             Console.WriteLine("[StatePersistence] No valid state found, initializing empty state");
-            return null;
+            return new ComprehensiveBotState();
         }
         
-        private ComprehensiveBotState TryLoadFromFile(string filePath)
+        private ComprehensiveBotState? TryLoadFromFile(string filePath)
         {
             if (!File.Exists(filePath))
                 return null;
@@ -94,7 +94,8 @@ namespace DualEngineRegimeBot.Core.State
                     PropertyNamingPolicy = JsonNamingPolicy.CamelCase
                 };
                 
-                return JsonSerializer.Deserialize<ComprehensiveBotState>(json, options);
+                var state = JsonSerializer.Deserialize<ComprehensiveBotState>(json, options);
+                return state ?? new ComprehensiveBotState();
             }
             catch (Exception ex)
             {
@@ -109,50 +110,71 @@ namespace DualEngineRegimeBot.Core.State
     /// </summary>
     public class ComprehensiveBotState
     {
-        // Metadata
+        // Metadata - These should always have values
         public DateTime SavedAt { get; set; } = DateTime.UtcNow;
-        public string ConfigHash { get; set; }
-        public string BotVersion { get; set; }
+        public string ConfigHash { get; init; }
+        public string BotVersion { get; init; }
         
-        // Positions
-        public List<PersistedPosition> OpenPositions { get; set; } = new List<PersistedPosition>();
-        public PersistedHedge ActiveHedge { get; set; }
+        // Positions - OpenPositions has default, but ActiveHedge can be null
+        public List<PersistedPosition> OpenPositions { get; set; }
+        public PersistedHedge? ActiveHedge { get; set; }
         
-        // Regime state
+        // Regime state - Must always have a regime state
         public PersistedRegime CurrentRegime { get; set; }
         public DateTime RegimeChangeTime { get; set; }
         public int RegimeBarsAge { get; set; }
         
-        // SMS state
-        public Queue<double> SMSHistory { get; set; } = new Queue<double>();
+        // SMS state - Must have initialized collections
+        public Queue<double> SMSHistory { get; set; }
         public double[] ATRFloors { get; set; }
         
-        // Drawdown state
+        // Drawdown state - Collections must be initialized
         public double AllTimeHigh { get; set; }
         public double RollingPeakEquity { get; set; }
-        public Queue<EquitySnapshot> EquityHistory { get; set; } = new Queue<EquitySnapshot>();
+        public Queue<EquitySnapshot> EquityHistory { get; set; }
         public bool SurvivalModeActive { get; set; }
         
-        // NewsGuard state
+        // NewsGuard state - Value types have implicit defaults
         public NewsGuardPhase NewsGuardPhase { get; set; }
         public DateTime NewsSpikeDetectedAt { get; set; }
         public double NewsSpikeStrength { get; set; }
         
         // Hedge controller state
-        public HedgeState HedgeState { get; set; }
+        public HedgeState? HedgeState { get; set; }
         public DateTime LastHedgeTime { get; set; }
         
         // Execution QoS
-        public List<QoSMetric> RecentQoSMetrics { get; set; } = new List<QoSMetric>();
+        public List<QoSMetric> RecentQoSMetrics { get; set; }
         
         // DLQ
         public int DLQErrorCount { get; set; }
         public DateTime DLQLastError { get; set; }
+        
+        // Constructor to initialize all non-nullable reference types
+        public ComprehensiveBotState()
+        {
+            // Initialize metadata
+            ConfigHash = string.Empty;
+            BotVersion = "0.0.0";
+            
+            // Initialize collections and required objects
+            OpenPositions = new List<PersistedPosition>();
+            CurrentRegime = new PersistedRegime();
+            SMSHistory = new Queue<double>();
+            ATRFloors = Array.Empty<double>();
+            EquityHistory = new Queue<EquitySnapshot>();
+            RecentQoSMetrics = new List<QoSMetric>();
+            
+            // Set default timestamps
+            RegimeChangeTime = DateTime.UtcNow;
+            NewsSpikeDetectedAt = DateTime.UtcNow;
+            LastHedgeTime = DateTime.UtcNow;
+        }
     }
     
     public class PersistedPosition
     {
-        public string Id { get; set; }
+        public string Id { get; init; }
         public TradeSide Side { get; set; }
         public double Volume { get; set; }
         public double EntryPrice { get; set; }
@@ -161,7 +183,14 @@ namespace DualEngineRegimeBot.Core.State
         public double UnrealizedPnL { get; set; }
         public int BarsOpen { get; set; }
         public double CurrentTrailDistance { get; set; }
-        public string Label { get; set; }
+        public string Label { get; init; }
+        
+        public PersistedPosition()
+        {
+            Id = string.Empty;
+            Label = string.Empty;
+            EntryTime = DateTime.UtcNow;
+        }
     }
     
     public class PersistedHedge
@@ -169,7 +198,7 @@ namespace DualEngineRegimeBot.Core.State
         public TradeSide Side { get; set; }
         public double Volume { get; set; }
         public double OpenPrice { get; set; }
-        public DateTime OpenTime { get; set; }
+        public DateTime OpenTime { get; set; } = DateTime.UtcNow;
         public int BarsHeld { get; set; }
         public double MinutesHeld { get; set; }
     }
@@ -179,12 +208,12 @@ namespace DualEngineRegimeBot.Core.State
         public RegimeDirection Direction { get; set; }
         public RegimeVolState VolState { get; set; }
         public double Confidence { get; set; }
-        public DateTime Timestamp { get; set; }
+        public DateTime Timestamp { get; set; } = DateTime.UtcNow;
     }
     
     public class EquitySnapshot
     {
-        public DateTime Time { get; set; }
+        public DateTime Time { get; set; } = DateTime.UtcNow;
         public double Equity { get; set; }
     }
     
